@@ -12,10 +12,10 @@ describe('ApiService', () => {
   beforeEach(() => {
     service = new ApiService();
 
-    // Limpiar el store antes de cada prueba
+    // Clean the store before each test
     store = {};
 
-    // Utilizar jest.fn() para crear mocks simples
+    // Use jest.fn() to create simple mocks
     localStorage.getItem = jest.fn((key: string) => store[key] || null);
     localStorage.setItem = jest.fn((key: string, value: string) => {
       store[key] = value;
@@ -23,7 +23,7 @@ describe('ApiService', () => {
   });
 
   afterEach(() => {
-    // Restaurar todas las implementaciones originales
+    // Restore all original deployments
     jest.restoreAllMocks();
   });
 
