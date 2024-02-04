@@ -1,0 +1,40 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    width: 100%;
+
+    &:hover .delete-btn {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.completed {
+        background-color: #64748b;
+        color: black
+    }
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+}
+
+.todo-title {
+    flex-grow: 1;
+    padding: 0 10px;
+}
+.input-edit{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #334155;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+.delete-btn {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}

@@ -1,0 +1,32 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  .input-container {
+      width: 100%;
+      mat-form-field {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        color:white;
+        border-radius: 4px;
+        input {
+          height: 1.5rem;
+          background: transparent !important;
+          color:white
+        }
+      }
+    }
+
+  .button-container {
+    width: auto;
+      mat-form-field {
+        background: transparent;
+      }
+      button {
+        width: auto;
+        height: 3rem;
+      }
+  }
+}

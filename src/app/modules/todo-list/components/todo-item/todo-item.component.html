@@ -1,0 +1,17 @@
+<div class="todo-item" [ngClass]="{'completed': item.isCompleted}">
+    <mat-checkbox class="todo-checkbox" [(ngModel)]="item.isCompleted" (change)="onToggleComplete()" aria-checked="true"></mat-checkbox>
+
+    <ng-container *ngIf="!isEditing; else editInput">
+        <span class="todo-title">{{ item.title }}</span>
+    </ng-container>
+    <ng-template #editInput>
+        <input type="text" [(ngModel)]="editTitle"  class="input-edit"/>
+    </ng-template>
+
+    <button mat-icon-button (click)="toggleEdit()" aria-label="Edit task">
+        <mat-icon>{{ isEditing ? 'save' : 'edit' }}</mat-icon>
+    </button>
+    <button class="delete-btn" mat-icon-button (click)="onDelete()" aria-label="Delete task">
+        <mat-icon>delete_outline</mat-icon>
+    </button>
+</div>

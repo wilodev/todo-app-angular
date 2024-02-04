@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Wilodev - Tasks</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="filter">
+    <mat-button-toggle-group #group="matButtonToggleGroup" aria-label="Filtro de tareas" class="group-buttons" (change)="onFilterChange(group.value)">
+      <mat-button-toggle value="all" class="btn" role="tab">All items</mat-button-toggle>
+      <mat-button-toggle value="pending" class="btn" role="tab">Pending items</mat-button-toggle>
+      <mat-button-toggle value="completed" class="btn" role="tab">Completed items</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="count">
+    <div class="count-body">{{ itemCount$ | async }} ítems ({{ pendingCount$ | async }} pending)</div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="form-container"><app-todo-form (newTodo)="addTodo($event)"></app-todo-form></div>
+
+<div class="todo-list">
+  <ng-container *ngFor="let todo of filteredTodos$ | async; trackBy: trackById">
+    <app-todo-item [item]="todo" (delete)="onDelete($event)" (toggleComplete)="onToggleComplete(todo)"  (update)="onItemUpdate($event)"></app-todo-item>
+  </ng-container>
+  <div *ngIf="(filteredTodos$ | async)?.length === 0" class="empty">
+    There are no tasks.
+  </div>
+</div>
+

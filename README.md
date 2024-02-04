@@ -1,27 +1,63 @@
-# TodoApp
+# Wilodev - Task Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+## Description
 
-## Development server
+This project is a Single Page Application (SPA) built with Angular 17, showcasing a To-Do List manager with full CRUD functionality, designed to simulate a real-world task management application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+1. Add, delete, and mark tasks as completed.
+2. Filter tasks by all, pending, or completed statuses.
+3. Inline editing of task descriptions.
+4. Responsive design for various screen sizes.
+5. Utilizes Angular's latest features for a streamlined, modern SPA experience.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+To install and run this project locally, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
 
-## Running unit tests
+```bash
+  git clone https://github.com/wilodev/todo-app-angular.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Navigate to the project directory:
 
-## Running end-to-end tests
+```bash
+  cd todo-app
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Install dependencies:
 
-## Further help
+```bash
+  npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Run the application:
+
+```bash
+  ng serve
+```
+
+1. Open your browser and navigate to `http://localhost:4200/`.
+
+## Running Tests
+
+To execute the unit tests with Jest, run:
+
+```bash
+  npm test
+```
+
+## Accessibility
+
+This application is designed with accessibility in mind, providing ARIA labels and roles for screen readers and ensuring keyboard navigability throughout the app.
+
+## Mock Server
+
+The app uses localStorage to simulate a backend service, with ApiService handling the mock API operations.
+
+## Author
+
+[Wilodev](https://github.com/wilodev) - Wilson Pérez Senior Developer.
